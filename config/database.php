@@ -15,13 +15,13 @@ return [
     // 服务器地址
     'hostname'        => '127.0.0.1',
     // 数据库名
-    'database'        => '',
+    'database'        => 'danmu_hzfblog_c',
     // 用户名
-    'username'        => 'root',
+    'username'        => 'danmu_hzfblog_c',
     // 密码
-    'password'        => '',
+    'password'        => 'Q6zeSiZkpWGmEmhQ',
     // 端口
-    'hostport'        => '',
+    'hostport'        => '3306',
     // 连接dsn
     'dsn'             => '',
     // 数据库连接参数
