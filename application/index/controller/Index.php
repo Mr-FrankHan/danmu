@@ -3,9 +3,10 @@ namespace app\index\controller;
 
 use EasyWeChat\Factory;
 
-class Index{
-    public function index(){
-        // 一些配置
+class Index
+{
+    public function index()
+    {
         $config = [
             'app_id' => "wx9063667218217d08",
             'secret' => "8c2391e3ccfabee663aec6620af91a47",
@@ -18,13 +19,8 @@ class Index{
             ],
         ];
 
-        // 使用配置来初始化一个公众号应用实例。
         $app = Factory::officialAccount($config);
-
         $response = $app->server->serve();
-
-        // 将响应输出
-        $response->send(); exit;
+        $response->send(); // Laravel 里请使用：return $response;
     }
 }
-
