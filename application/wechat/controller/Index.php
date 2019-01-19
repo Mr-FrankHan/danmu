@@ -1,15 +1,13 @@
 <?php
 namespace app\wechat\controller;
 
-use EasyWeChat\Factory;
-
 class Index
 {
     public function index()
     {
         $app = load_wechat_app();
         $app->server->push(function ($message) {
-            return $message['FromUserName'];
+            return $message['Content '];
         });
 
         $response = $app->server->serve();
