@@ -9,7 +9,7 @@ class Index
     {
         $app = load_wechat_app();
         $app->server->push(function ($message) {
-            return "您好！欢迎使用 EasyWeChat!";
+            return $message;
         });
 
         $response = $app->server->serve();
