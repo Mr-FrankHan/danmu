@@ -8,7 +8,13 @@ class Index
     public function index()
     {
         $app = load_wechat_app();
+        $app->server->push(function ($message) {
+            return "您好！欢迎使用 EasyWeChat!";
+        });
+
         $response = $app->server->serve();
-        $response->send(); // Laravel 里请使用：return $response;
+
+        // 将响应输出
+        $response->send();
     }
 }
