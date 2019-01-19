@@ -9,7 +9,7 @@ class Index
     {
         $app = load_wechat_app();
         $app->server->push(function ($message) {
-            return "fdsghfdsgdfsgfdgdf";
+            return $message['FromUserName'];
         });
 
         $response = $app->server->serve();
