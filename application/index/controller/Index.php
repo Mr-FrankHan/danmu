@@ -1,15 +1,30 @@
 <?php
 namespace app\index\controller;
 
-class Index
-{
-    public function index()
-    {
-        return '<style type="text/css">*{ padding: 0; margin: 0; } div{ padding: 4px 48px;} a{color:#2E5CD5;cursor: pointer;text-decoration: none} a:hover{text-decoration:underline; } body{ background: #fff; font-family: "Century Gothic","Microsoft yahei"; color: #333;font-size:18px;} h1{ font-size: 100px; font-weight: normal; margin-bottom: 12px; } p{ line-height: 1.6em; font-size: 42px }</style><div style="padding: 24px 48px;"> <h1>:) </h1><p> ThinkPHP V5.1<br/><span style="font-size:30px">12载初心不改（2006-2018） - 你值得信赖的PHP框架</span></p></div><script type="text/javascript" src="https://tajs.qq.com/stats?sId=64890268" charset="UTF-8"></script><script type="text/javascript" src="https://e.topthink.com/Public/static/client.js"></script><think id="eab4b9f840753f8e7"></think>';
-    }
+use EasyWeChat\Factory;
 
-    public function hello($name = 'ThinkPHP5')
-    {
-        return 'hello,' . $name;
+class Index{
+    public function index(){
+        // 一些配置
+        $config = [
+            'app_id' => "wx9063667218217d08",
+            'secret' => "8c2391e3ccfabee663aec6620af91a47",
+            // 指定 API 调用返回结果的类型：array(default)/collection/object/raw/自定义类名
+            'token' => '3FptRbZ6S809jCzeEi0hOTNePNiF26fR',          // Token
+            'response_type' => 'array',
+            "aes_key" => '',
+            'http' => [
+                'timeout' => 300.0,
+            ],
+        ];
+
+        // 使用配置来初始化一个公众号应用实例。
+        $app = Factory::officialAccount($config);
+
+        $response = $app->server->serve();
+
+        // 将响应输出
+        $response->send(); exit;
     }
 }
+
