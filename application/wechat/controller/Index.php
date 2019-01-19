@@ -7,7 +7,7 @@ class Index
     {
         $app = load_wechat_app();
         $app->server->push(function ($message) {
-            return $message['Content '];
+            return $message['FromUserName'];
         });
 
         $response = $app->server->serve();
