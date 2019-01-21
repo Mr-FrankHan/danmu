@@ -5,3 +5,7 @@
 thinkphp
 .env
 .DS_Store
+composer.lock
+user.ini
+index.html
+404.html
