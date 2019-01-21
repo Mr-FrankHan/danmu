@@ -398,7 +398,7 @@ var cyntax = {
                                     "text-shadow": " 0px 0px 2px #FFFFFF"
                                 });
                             if (danmaku.hasOwnProperty('isnew')) {
-                                $("#" + me.id + "tempDanmaku").css({"background-color": "#222","border-radius":"17px","padding":"0 20px"});
+                                $("#" + me.id + "tempDanmaku").css({"background-color": "#888","border-radius":"17px","padding":"0 20px"});
                             }
                             if (danmaku.size == 0) $("#" + me.id + "tempDanmaku").css("font-size", options.fontSizeSmall);
                             if (danmaku.position == 0) {
